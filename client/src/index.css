@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Cinzel", serif;
+  --font-body: "Montserrat", sans-serif;
+
+  --color-brass: #C5A059;
+  --color-obsidian: #1A1A1A;
+  --color-alabaster: #FAF9F6;
+  --color-stone: #E5DCD3;
+}
+
+
+:root {
+  --brass: #C5A059;
+  --obsidian: #1A1A1A;
+  --alabaster: #FAF9F6;
+  --stone: #E5DCD3;
+}
+
+
+body {
+    background-color: #1A1A1A;
+    color: #FAF9F6;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Cinzel", serif;
+}
+
+
+.glass {
+    background: rgba(26, 26, 26, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.gold-glow {
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.15);
+}
+
+.gold-text-gradient {
+    background: linear-gradient(to right, #C5A059, #E5DCD3, #C5A059);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
