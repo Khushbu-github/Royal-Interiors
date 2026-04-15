@@ -72,22 +72,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-
-                    {/* Business Hours */}
-                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                        <h3 className="text-[#FAF9F6] font-bold mb-6 md:mb-8 uppercase tracking-[0.2em] text-xs md:text-sm border-l-4 border-[#C5A059] pl-4">Hours</h3>
-                        <ul className="space-y-4 text-[11px] md:text-sm font-medium w-full max-w-[240px] md:max-w-none">
-                            <li className="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/5">
-                                <span className="opacity-50">Mon - Sat</span>
-                                <span className="text-[#FAF9F6] font-bold">09 AM - 08 PM</span>
-                            </li>
-                            <li className="flex justify-between items-center bg-[#C5A059]/10 p-4 rounded-2xl border border-[#C5A059]/20 text-[#C5A059] font-black">
-                                <span className="uppercase tracking-[0.1em]">Sunday</span>
-                                <span>Open (All Day)</span>
-                            </li>
-                        </ul>
-                    </div>
-
                 </div>
 
                 <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold">

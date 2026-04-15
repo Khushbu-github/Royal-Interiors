@@ -12,13 +12,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    "https://www.autofreaks.in",
-    "https://autofreaks.in",
-    "https://api.autofreaks.in",
-    "http://localhost:5173"
-  ],
-  credentials: true
+  origin: "*"
 }));
 app.use(express.json());
 
