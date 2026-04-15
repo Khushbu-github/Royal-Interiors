@@ -10,10 +10,17 @@ const Gallery = () => {
     useEffect(() => {
         const fetchImages = async () => {
             try {
+                console.log('📡 Fetching gallery from:', axios.defaults.baseURL + '/gallery');
                 const { data } = await axios.get('/gallery');
                 setImages(data);
             } catch (error) {
-                console.error('Error fetching gallery:', error);
+                console.error('❌ Error fetching gallery:', {
+                    message: error.message,
+                    code: error.code,
+                    response: error.response?.data,
+                    status: error.response?.status,
+                    configUrl: error.config?.url
+                });
             } finally {
                 setLoading(false);
             }
