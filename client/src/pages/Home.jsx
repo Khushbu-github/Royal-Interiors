@@ -338,6 +338,66 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* ===== TESTIMONIALS SECTION ===== */}
+            <div className="py-20 md:py-28 bg-[#1A1A1A]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-14 md:mb-20" data-aos="fade-up">
+                        <span className="text-[#C5A059] text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Client Stories</span>
+                        <h2 className="text-3xl md:text-5xl font-black text-[#FAF9F6] uppercase tracking-widest">Royal <span className="gold-text-gradient">Experiences</span></h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            {
+                                name: "Arjun Reddy",
+                                location: "Indiranagar, Bangalore",
+                                text: "The attention to detail in our modular kitchen is simply world-class. RK Royal Interiors truly understands luxury.",
+                                stars: 5
+                            },
+                            {
+                                name: "Priya Sharma",
+                                location: "Koramangala, Bangalore",
+                                text: "Exceptional design and timely execution. Our 3BHK was transformed into a royal sanctuary within the promised timeline.",
+                                stars: 5
+                            },
+                            {
+                                name: "Sandeep Hegde",
+                                location: "Whitefield, Bangalore",
+                                text: "Quiet luxury at its best. Their choice of materials like the HD UV marble panels gave our home a unique, premium feel.",
+                                stars: 5
+                            },
+                            {
+                                name: "Ananya Roy",
+                                location: "HSR Layout, Bangalore",
+                                text: "Professional, creative, and transparent. The false ceiling designs for our living room are the highlight of our home.",
+                                stars: 5
+                            }
+                        ].map((t, i) => (
+                            <div 
+                                key={i}
+                                data-aos="fade-up"
+                                data-aos-delay={`${i * 100}`}
+                                className="group bg-[#2C2C2B] border border-[#C5A059]/10 rounded-2xl p-8 hover:border-[#C5A059]/40 transition-all duration-500 relative flex flex-col"
+                            >
+                                <div className="absolute top-4 right-6 text-4xl text-[#C5A059]/10 font-serif group-hover:text-[#C5A059]/20 transition-colors">"</div>
+                                <div className="flex gap-1 mb-4">
+                                    {[...Array(t.stars)].map((_, j) => (
+                                        <span key={j} className="text-[#C5A059] text-[10px]">★</span>
+                                    ))}
+                                </div>
+                                <p className="text-[#FAF9F6]/80 text-xs md:text-sm italic mb-8 leading-relaxed flex-1">
+                                    "{t.text}"
+                                </p>
+                                <div>
+                                    <p className="text-[#FAF9F6] font-bold text-xs uppercase tracking-widest">{t.name}</p>
+                                    <p className="text-[#C5A059] text-[9px] font-medium tracking-widest uppercase mt-1">{t.location}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
             {/* ===== BRANCHES SECTION ===== */}
             <div className="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 md:mb-16" data-aos="fade-up">

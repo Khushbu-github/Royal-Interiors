@@ -36,5 +36,4 @@ Thumbs.db
 # Project Specific
 client/node_modules/
 server/node_modules/
-uploadpdfs/
 server/uploads/
