@@ -6,7 +6,7 @@ const collectionData = [
         title: '3D UV Series',
         category: 'UV Panels',
         description: 'Premium 3D UV panel designs for stunning wall transformations.',
-        filename: '3D UV Series.pdf.pdf',
+        filename: '3d-uv-series.pdf',
         preview: '/previews/uv_marble.png',
     },
     {
@@ -14,7 +14,7 @@ const collectionData = [
         title: '3D Wall Panels',
         category: 'Wall Panels',
         description: 'Decorative 3D wall panel collection for modern interiors.',
-        filename: '3D WALL PANNELS.pdf.pdf',
+        filename: '3d-wall-panels.pdf',
         preview: '/previews/3d_wall.png',
     },
     {
@@ -22,7 +22,7 @@ const collectionData = [
         title: 'All UV Series',
         category: 'UV Panels',
         description: 'Complete UV series collection — all finishes and designs.',
-        filename: 'ALL UV SERIES.pdf.pdf',
+        filename: 'all-uv-series.pdf',
         preview: '/previews/uv_marble.png',
     },
     {
@@ -30,7 +30,7 @@ const collectionData = [
         title: 'Charcoal Panels',
         category: 'Specialty Panels',
         description: 'Full charcoal panel shade guide with all sizes.',
-        filename: 'Charchol Panels All Shades & Size.pdf.pdf',
+        filename: 'charcoal-panels-all-shades.pdf',
         preview: '/previews/3d_wall.png',
     },
     {
@@ -38,7 +38,7 @@ const collectionData = [
         title: 'Exclusive Fluted Panel',
         category: 'Fluted Panels',
         description: 'Our exclusive range of high-end fluted panel designs.',
-        filename: 'EXCLUSIVE FLUTED PANEL.pdf.pdf',
+        filename: 'exclusive-fluted-panel.pdf',
         preview: '/previews/fluted.png',
     },
     {
@@ -46,7 +46,7 @@ const collectionData = [
         title: 'Fluted Gold Line',
         category: 'Fluted Panels',
         description: 'Luxurious gold-lined fluted panels for premium spaces.',
-        filename: 'FLUTED GOLD LINE.pdf.pdf',
+        filename: 'fluted-gold-line.pdf',
         preview: '/previews/fluted_gold.png',
     },
     {
@@ -54,7 +54,7 @@ const collectionData = [
         title: 'Fluted Panels Series 200–2200',
         category: 'Fluted Panels',
         description: 'Comprehensive fluted panel series across all widths.',
-        filename: 'FLUTED PANELS Series 200 600 2200.pdf.pdf',
+        filename: 'fluted-panels-series-200-2200.pdf',
         preview: '/previews/fluted.png',
     },
     {
@@ -62,7 +62,7 @@ const collectionData = [
         title: 'Fluted Glossy W2100 Series',
         category: 'Fluted Panels',
         description: 'High-gloss W2100 fluted panel collection.',
-        filename: 'Fluted Glossy W2100 Series.pdf.pdf',
+        filename: 'fluted-glossy-w2100-series.pdf',
         preview: '/previews/fluted_gold.png',
     },
     {
@@ -70,7 +70,7 @@ const collectionData = [
         title: 'Glass Mosaics',
         category: 'Specialty',
         description: 'Elegant glass mosaic tile collection for accent walls.',
-        filename: 'Glass Mosaics.pdf.pdf',
+        filename: 'glass-mosaics.pdf',
         preview: '/previews/glass_mosaic.png',
     },
     {
@@ -78,7 +78,7 @@ const collectionData = [
         title: 'HD UV Marble',
         category: 'UV Panels',
         description: 'High-definition UV marble finish panels — ultra-realistic.',
-        filename: 'HD UV Marble.pdf.pdf',
+        filename: 'hd-uv-marble.pdf',
         preview: '/previews/uv_marble.png',
     },
 
@@ -87,7 +87,7 @@ const collectionData = [
         title: 'Premium PVC Fluted 14G',
         category: 'Fluted Panels',
         description: 'Heavy-duty 14G premium PVC fluted panels.',
-        filename: 'PREMIUM PVC FLUTED 14 G (1).pdf.pdf',
+        filename: 'premium-pvc-fluted-14g.pdf',
         preview: '/previews/fluted.png',
     },
     {
@@ -95,7 +95,7 @@ const collectionData = [
         title: 'PVC Max',
         category: 'PVC Panels',
         description: 'Maximum-strength PVC panel range for walls and ceilings.',
-        filename: 'PVC MAX.pdf.pdf',
+        filename: 'pvc-max.pdf',
         preview: '/previews/fluted.png',
     },
     {
@@ -103,7 +103,7 @@ const collectionData = [
         title: 'SOFFIT Premium',
         category: 'Ceilings',
         description: 'Premium soffit solutions for false ceiling applications.',
-        filename: 'SOFFIT premium.pdf.pdf',
+        filename: 'soffit-premium.pdf',
         preview: '/previews/ceiling_soffit.png',
     },
     {
@@ -111,7 +111,7 @@ const collectionData = [
         title: 'Sticker UV Marble',
         category: 'UV Stickers',
         description: 'UV marble sticker series for quick wall transformations.',
-        filename: 'STICKER UV MARVLE-1-2.pdf',
+        filename: 'sticker-uv-marble.pdf',
         preview: '/previews/uv_marble.png',
     },
     {
@@ -119,7 +119,7 @@ const collectionData = [
         title: 'Super Heavy Panels',
         category: 'Specialty Panels',
         description: 'Super-heavy duty panel collection for demanding applications.',
-        filename: 'SUPER HAVEY.pdf.pdf',
+        filename: 'super-heavy-panels.pdf',
         preview: '/previews/3d_wall.png',
     },
     {
@@ -127,7 +127,7 @@ const collectionData = [
         title: 'Silver & Golden Lines – 7mm',
         category: 'Specialty',
         description: 'Silver and golden ceiling shades in 7mm thickness.',
-        filename: 'Silver Golden Lines  & ceiling shade 7mm.pdf.pdf',
+        filename: 'silver-golden-lines-7mm.pdf',
         preview: '/previews/fluted_gold.png',
     },
     {
@@ -135,7 +135,7 @@ const collectionData = [
         title: 'WPC 23mm Premium',
         category: 'WPC Panels',
         description: 'Premium 23mm WPC panels with superior durability.',
-        filename: 'WPC 23mm PREMIUM.pdf.pdf',
+        filename: 'wpc-23mm-premium.pdf',
         preview: '/previews/wpc.png',
     },
     {
@@ -143,7 +143,7 @@ const collectionData = [
         title: 'WPC Panels 17mm',
         category: 'WPC Panels',
         description: 'Versatile 17mm WPC panel collection.',
-        filename: 'WPc Panels 17mm.pdf.pdf',
+        filename: 'wpc-panels-17mm.pdf',
         preview: '/previews/wpc.png',
     },
     {
@@ -151,7 +151,7 @@ const collectionData = [
         title: 'WPC Panels 9mm',
         category: 'WPC Panels',
         description: 'Lightweight 9mm WPC panels for varied applications.',
-        filename: 'Wpc Panels 9mm .pdf.pdf',
+        filename: 'wpc-panels-9mm.pdf',
         preview: '/previews/wpc.png',
     },
 ];
