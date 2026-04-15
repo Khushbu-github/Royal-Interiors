@@ -42,14 +42,18 @@ function App() {
   if (loading) {
     return (
       <div className="fixed inset-0 bg-[#1A1A1A] flex flex-col items-center justify-center z-50">
-        {/* Outer glow ring */}
-        <div className="relative mb-8">
-          <div className="absolute -inset-10 bg-[#C5A059]/10 rounded-full blur-3xl animate-pulse" />
-          <img
-            src={Logo}
-            alt="RK Royal Interiors"
-            className="relative h-32 w-auto drop-shadow-2xl animate-pulse transition-all duration-1000"
-          />
+        {/* Logo Shield */}
+        <div className="relative mb-10" data-aos="zoom-in">
+          <div className="absolute -inset-16 bg-[#C5A059]/5 rounded-full blur-3xl animate-pulse" />
+          <div className="relative bg-[#C5A059] p-10 md:p-12 rounded-full shadow-[0_0_60px_rgba(197,160,89,0.4)] animate-bounce-slow">
+            <img
+              src={Logo}
+              alt="RK Royal Interiors"
+              className="h-24 md:h-32 w-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
+            />
+            {/* Elegant border ring */}
+            <div className="absolute inset-2 border border-black/10 rounded-full" />
+          </div>
         </div>
         {/* Brand name */}
         <div className="text-center mb-10">
