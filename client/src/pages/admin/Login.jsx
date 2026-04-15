@@ -104,6 +104,30 @@ const Login = () => {
                             </button>
                         </div>
 
+                        {/* Temporary Debug Registration Link */}
+                        <div className="pt-4 text-center border-t border-[#C5A059]/5 mt-4">
+                            <p className="text-[8px] text-stone/30 uppercase tracking-[0.2em] mb-2">Debug Mode</p>
+                            <button 
+                                type="button" 
+                                onClick={async () => {
+                                    if(window.confirm('Temporarily create a new admin with current credentials?')) {
+                                        try {
+                                            setLoading(true);
+                                            await axios.post('/auth/register', formData);
+                                            alert('Admin created successfully! You can now log in.');
+                                        } catch (err) {
+                                            alert(err.response?.data?.message || 'Registration failed');
+                                        } finally {
+                                            setLoading(false);
+                                        }
+                                    }
+                                }}
+                                className="text-[#C5A059]/40 hover:text-[#C5A059] text-[9px] font-black uppercase tracking-widest transition-colors"
+                            >
+                                Force Register Current Credentials
+                            </button>
+                        </div>
+
                     </form>
                 </div>
             </div>

@@ -44,17 +44,33 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     const { username, password } = req.body;
 
-    // Find user
-    const user = await User.findOne({ username });
+    console.log(`🔐 Login attempt for: ${username}`);
 
-    if (user && (await user.matchPassword(password))) {
-        res.json({
-            _id: user._id,
-            username: user.username,
-            token: generateToken(user._id)
-        });
-    } else {
-        res.status(401).json({ message: 'Invalid username or password' });
+    try {
+        // Find user
+        const user = await User.findOne({ username });
+
+        if (!user) {
+            console.log(`❌ User not found: ${username}`);
+            return res.status(401).json({ message: 'Invalid username or password' });
+        }
+
+        const isMatch = await user.matchPassword(password);
+        
+        if (isMatch) {
+            console.log(`✅ Login successful: ${username}`);
+            res.json({
+                _id: user._id,
+                username: user.username,
+                token: generateToken(user._id)
+            });
+        } else {
+            console.log(`❌ Password mismatch for: ${username}`);
+            res.status(401).json({ message: 'Invalid username or password' });
+        }
+    } catch (error) {
+        console.error('🔥 Login Error:', error);
+        res.status(500).json({ message: 'Internal server error during login' });
     }
 };
 
