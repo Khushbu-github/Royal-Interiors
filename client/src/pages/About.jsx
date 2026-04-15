@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/logo.png';
 
 const values = [
     { icon: '🏆', title: 'Excellence', desc: 'We deliver nothing short of the finest — in materials, craftsmanship, and experience.' },
