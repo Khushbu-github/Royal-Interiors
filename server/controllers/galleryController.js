@@ -30,7 +30,7 @@ const uploadImage = async (req, res) => {
             try {
                 // Upload to Cloudinary
                 const result = await cloudinary.uploader.upload(file.path, {
-                    folder: 'car-dealership-gallery'
+                    folder: 'rk-royal-interiors-gallery'
                 });
 
                 // Create DB entry
