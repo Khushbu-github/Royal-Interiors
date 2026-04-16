@@ -31,11 +31,11 @@ const Navbar = () => {
 
 
                         <div className="flex items-center -ml-4 md:-ml-10">
-                            <Link to="/" className="flex-shrink-0 flex items-center group/logo relative bg-[#C5A059] px-6 md:px-10 py-6 md:py-8 rounded-b-3xl shadow-[0_10px_30px_rgba(197,160,89,0.3)]">
+                            <Link to="/" className="flex-shrink-0 flex items-center group/logo relative bg-[#C5A059] px-4 py-4 md:px-10 md:py-8 rounded-b-3xl shadow-[0_10px_30px_rgba(197,160,89,0.3)]">
                                <img 
                                   src={Logo} 
                                   alt="RK Royal Interiors" 
-                                  className="transition-all duration-500 h-30 md:h-36 w-auto group-hover/logo:scale-110 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" 
+                                  className="transition-all duration-500 h-20 md:h-36 w-auto group-hover/logo:scale-110 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" 
                                 />
                                 <div className="absolute inset-0 border-b-2 border-x-2 border-black/5 rounded-b-3xl pointer-events-none" />
                             </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
 
                 {/* Mobile menu */}
                 <div className={`lg:hidden transition-all duration-500 ease-in-out border-t border-[#C5A059]/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] ${isOpen ? 'max-h-[85vh] opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <div className="px-6 pt-4 pb-10 space-y-2 bg-[#1A1A1A]">
+                    <div className="px-6 pt-32 pb-10 space-y-2 bg-[#1A1A1A]">
                         {navs.map((item, index) => (
                             <Link
                                 key={item.name}
