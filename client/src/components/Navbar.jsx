@@ -77,7 +77,7 @@ const Navbar = () => {
 
                 {/* Mobile menu */}
                 <div className={`lg:hidden transition-all duration-500 ease-in-out border-t border-[#C5A059]/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] ${isOpen ? 'max-h-[85vh] opacity-100' : 'max-h-0 opacity-0'} overflow-y-auto`}>
-                    <div className="px-6 pt-44 pb-12 space-y-2 bg-[#1A1A1A]">
+                    <div className="px-6 pt-24 pb-12 space-y-2 bg-[#1A1A1A]">
                         {navs.map((item, index) => (
                             <Link
                                 key={item.name}
