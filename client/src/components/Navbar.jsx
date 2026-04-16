@@ -25,8 +25,8 @@ const Navbar = () => {
 
     return (
         <nav className={`fixed z-50 flex justify-center w-full transition-all duration-500 ${scrolled ? 'lg:top-2 px-4' : 'lg:top-0 px-0'} top-2 px-2`}>
-            <div className={`w-full transition-all duration-500 ${isOpen ? 'overflow-visible' : 'overflow-hidden'} ${scrolled ? 'bg-[#1A1A1A]/90 backdrop-blur-xl border border-[#C5A059]/30 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-2xl max-w-6xl' : 'bg-[#1A1A1A]/95 backdrop-blur-md border-b border-[#C5A059]/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)] lg:max-w-full lg:rounded-none rounded-2xl max-w-7xl'} mx-auto`}>
-                <div className="px-4 sm:px-10">
+            <div className={`w-full transition-all duration-500 ${isOpen ? 'overflow-visible' : 'overflow-hidden'} ${scrolled ? 'max-w-6xl' : 'lg:max-w-full max-w-7xl'} mx-auto px-2 lg:px-4`}>
+                <div className={`transition-all duration-500 px-4 sm:px-10 ${scrolled ? 'bg-[#1A1A1A]/90 backdrop-blur-xl border border-[#C5A059]/30 shadow-[0_10px_40px_rgba(0,0,0,0.3)] rounded-2xl' : 'bg-[#1A1A1A]/95 backdrop-blur-md border-b border-[#C5A059]/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)] lg:rounded-none rounded-2xl'}`}>
                     <div className="flex justify-between items-center h-20 md:h-24 transition-all duration-500">
 
 
@@ -76,8 +76,8 @@ const Navbar = () => {
 
 
                 {/* Mobile menu */}
-                <div className={`lg:hidden transition-all duration-500 ease-in-out border-t border-[#C5A059]/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] ${isOpen ? 'max-h-[85vh] opacity-100' : 'max-h-0 opacity-0'} overflow-y-auto`}>
-                    <div className="px-6 pt-24 pb-12 space-y-2 bg-[#1A1A1A]">
+                <div className={`lg:hidden transition-all duration-500 ease-in-out border-x border-b border-[#C5A059]/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] rounded-b-2xl ${isOpen ? 'max-h-[85vh] opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'} overflow-y-auto`}>
+                    <div className="px-6 pt-16 pb-12 space-y-2 bg-[#1A1A1A]/95 backdrop-blur-xl">
                         {navs.map((item, index) => (
                             <Link
                                 key={item.name}
