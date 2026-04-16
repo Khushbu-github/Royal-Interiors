@@ -27,6 +27,10 @@ const Collection = () => {
         return matchCat && matchSearch;
     });
 
+    /**
+     * Handles the download and viewing of PDF files from the public folder.
+     * Ensure Git LFS is correctly configured on the hosting provider to serve the full files.
+     */
     const handleDownload = (filename) => {
         const link = document.createElement('a');
         // PDFs served from public/uploadpdfs
