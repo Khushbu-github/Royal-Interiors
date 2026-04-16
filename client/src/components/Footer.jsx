@@ -82,7 +82,6 @@ const Footer = () => {
                         <Link to="/admin/login" className="opacity-40 hover:opacity-100 hover:text-[#C5A059] transition-all">Admin Gateway</Link>
                     </div>
                 </div>
-
             </div>
         </footer>
     );
