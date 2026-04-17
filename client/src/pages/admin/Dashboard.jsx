@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Upload, Image, LogOut, LayoutDashboard, Car } from 'lucide-react';
+import { Upload, Image, LogOut, LayoutDashboard } from 'lucide-react';
 
 const Dashboard = () => {
     const navigate = useNavigate();

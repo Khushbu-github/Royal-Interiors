@@ -47,6 +47,11 @@ const loginUser = async (req, res) => {
     console.log(`🔐 Login attempt for: ${username}`);
 
     try {
+        if (!username || typeof password === 'undefined') {
+            console.log(`❌ Missing credentials for: ${username}`);
+            return res.status(400).json({ message: 'Please provide both username and password' });
+        }
+
         // Find user
         const user = await User.findOne({ username });
 
@@ -69,8 +74,8 @@ const loginUser = async (req, res) => {
             res.status(401).json({ message: 'Invalid username or password' });
         }
     } catch (error) {
-        console.error('🔥 Login Error:', error);
-        res.status(500).json({ message: 'Internal server error during login' });
+        console.error('🔥 Login Error:', error.message, error.stack);
+        res.status(500).json({ message: 'Internal server error during login', error: error.message });
     }
 };
 
