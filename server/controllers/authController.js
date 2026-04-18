@@ -74,9 +74,13 @@ const loginUser = async (req, res) => {
             res.status(401).json({ message: 'Invalid username or password' });
         }
     } catch (error) {
+        const fs = require('fs');
+        const loginErrorInfo = `\n[${new Date().toISOString()}] Login Error: ${error.message}\nStack: ${error.stack}\n`;
+        fs.appendFileSync('login_errors.txt', loginErrorInfo);
         console.error('🔥 Login Error:', error.message, error.stack);
         res.status(500).json({ message: 'Internal server error during login', error: error.message });
     }
+
 };
 
 module.exports = { registerUser, loginUser };
