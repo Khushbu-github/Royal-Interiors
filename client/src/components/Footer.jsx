@@ -10,17 +10,19 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                     {/* Brand Section */}
                     <div className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
-                        <Link to="/" className="flex items-center gap-4 group">
-                            <div className="bg-[#C5A059] p-3 md:p-4 rounded-2xl shadow-[0_8px_25px_rgba(197,160,89,0.3)] group-hover:shadow-[0_12px_35px_rgba(197,160,89,0.4)] transition-all duration-500">
-                                <img src={Logo} alt="RK Royal Interiors" className="h-20 md:h-16 w-auto transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-xl md:text-2xl text-[#FAF9F6] tracking-widest uppercase">
+                        <div className="flex flex-col items-center md:items-start gap-8">
+                            <Link to="/" className="group/logo relative">
+                                <div className="bg-[#C5A059] px-6 py-6 md:px-8 md:py-8 rounded-b-3xl shadow-[0_15px_40px_rgba(197,160,89,0.3)] transform transition-all duration-500 group-hover/logo:-translate-y-2">
+                                    <img src={Logo} alt="RK Royal Interiors" className="h-16 md:h-20 w-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-500 group-hover/logo:scale-110" />
+                                </div>
+                            </Link>
+                            <div className="flex flex-col items-center md:items-start">
+                                <span className="font-bold text-2xl md:text-3xl text-[#FAF9F6] tracking-[0.2em] uppercase leading-tight">
                                     RK Royal <span className="text-[#C5A059]">Interiors</span>
                                 </span>
-                                <span className="text-[8px] tracking-[0.4em] uppercase text-[#FAF9F6]/30 font-bold -mt-1 group-hover:text-[#C5A059]/50 transition-colors">Crafting Royalty</span>
+                                <span className="text-[10px] tracking-[0.6em] uppercase text-[#FAF9F6]/40 font-black mt-2">Crafting Royalty</span>
                             </div>
-                        </Link>
+                        </div>
                         <p className="text-xs md:text-sm leading-relaxed text-[#FAF9F6]/50 max-w-sm">
                             Transforming spaces into royal living. We specialize in premium residential and commercial interior design solutions that define elegance and sophistication since 2015.
                         </p>
