@@ -12,8 +12,8 @@ const Footer = () => {
                     <div className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
                         <div className="flex flex-col items-center md:items-start gap-8">
                             <Link to="/" className="group/logo relative">
-                                <div className="bg-[#C5A059] px-12 py-6 md:px-16 md:py-10 rounded-b-3xl shadow-[0_15px_40px_rgba(197,160,89,0.3)] transform transition-all duration-500 group-hover/logo:-translate-y-2">
-                                    <img src={Logo} alt="RK Royal Interiors" className="h-20 md:h-28 w-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-500 group-hover/logo:scale-105" />
+                                <div className="bg-[#C5A059] px-20 py-4 md:px-40 md:py-8 rounded-b-3xl shadow-[0_15px_40px_rgba(197,160,89,0.3)] transform transition-all duration-500 group-hover/logo:-translate-y-2">
+                                    <img src={Logo} alt="RK Royal Interiors" className="h-28 md:h-48 w-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-500 group-hover/logo:scale-105" />
                                 </div>
                             </Link>
                             <div className="flex flex-col items-center md:items-start">
