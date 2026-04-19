@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useState, useCallback } from 'react';
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import { 
     OrbitControls, 
@@ -46,10 +46,10 @@ const MaterialShowcase = ({ mouse }) => {
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow>
                 <planeGeometry args={[50, 50]} />
                 <MeshReflectorMaterial
-                    blur={[300, 100]}
-                    resolution={1024}
+                    blur={[200, 80]}
+                    resolution={512}
                     mixBlur={1}
-                    mixStrength={40}
+                    mixStrength={30}
                     roughness={1}
                     depthScale={1.2}
                     minDepthThreshold={0.4}
@@ -122,8 +122,9 @@ const MaterialShowcase = ({ mouse }) => {
 const Stars = () => {
     const ref = useRef();
     const [sphere] = useMemo(() => {
-        const data = new Float32Array(3000 * 3);
-        for (let i = 0; i < 3000; i++) {
+        const count = 1500;
+        const data = new Float32Array(count * 3);
+        for (let i = 0; i < count; i++) {
             data[i * 3] = (Math.random() - 0.5) * 25;
             data[i * 3 + 1] = (Math.random() - 0.5) * 25;
             data[i * 3 + 2] = (Math.random() - 0.5) * 25;
@@ -151,6 +152,18 @@ const Stars = () => {
 
 const HeroThree = () => {
     const mouse = useRef([0, 0]);
+    const [contextLost, setContextLost] = useState(false);
+
+    const handleCreated = useCallback(({ gl }) => {
+        const canvas = gl.domElement;
+        canvas.addEventListener('webglcontextlost', (e) => {
+            e.preventDefault();
+            setContextLost(true);
+        });
+        canvas.addEventListener('webglcontextrestored', () => {
+            setContextLost(false);
+        });
+    }, []);
 
     return (
         <div 
@@ -162,22 +175,32 @@ const HeroThree = () => {
                 ];
             }}
         >
-            <Canvas shadows={{ type: THREE.PCFShadowMap }} dpr={[1, 2]}>
-                <PerspectiveCamera makeDefault position={[0, 1, 10]} fov={35} />
-                <color attach="background" args={['#050505']} />
-                
-                <fog attach="fog" args={['#050505', 10, 25]} />
-                
-                <ambientLight intensity={0.5} />
-                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} castShadow />
-                
-                <React.Suspense fallback={null}>
-                    <MaterialShowcase mouse={mouse} />
-                    <Environment preset="city" />
-                </React.Suspense>
-                
-                <ContactShadows position={[0, -1.99, 0]} opacity={0.4} scale={20} blur={2.5} far={4.5} />
-            </Canvas>
+            {contextLost ? (
+                <div className="absolute inset-0 bg-[#050505] flex items-center justify-center">
+                    <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-4 border-2 border-[#C5A059] rounded-full flex items-center justify-center">
+                            <span className="text-[#C5A059] text-2xl">✦</span>
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <Canvas shadows={{ type: THREE.PCFShadowMap }} dpr={[1, 1.5]} onCreated={handleCreated}>
+                    <PerspectiveCamera makeDefault position={[0, 1, 10]} fov={35} />
+                    <color attach="background" args={['#050505']} />
+                    
+                    <fog attach="fog" args={['#050505', 10, 25]} />
+                    
+                    <ambientLight intensity={0.5} />
+                    <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} castShadow />
+                    
+                    <React.Suspense fallback={null}>
+                        <MaterialShowcase mouse={mouse} />
+                        <Environment preset="city" />
+                    </React.Suspense>
+                    
+                    <ContactShadows position={[0, -1.99, 0]} opacity={0.4} scale={20} blur={2.5} far={4.5} />
+                </Canvas>
+            )}
         </div>
     );
 };
