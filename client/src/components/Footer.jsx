@@ -10,8 +10,10 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                     {/* Brand Section */}
                     <div className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
-                        <Link to="/" className="flex items-center gap-3 group">
-                            <img src={Logo} alt="RK Royal Interiors" className="h-14 md:h-12 w-auto transition-transform group-hover:scale-110" />
+                        <Link to="/" className="flex items-center gap-4 group">
+                            <div className="bg-[#C5A059] p-3 md:p-4 rounded-2xl shadow-[0_8px_25px_rgba(197,160,89,0.3)] group-hover:shadow-[0_12px_35px_rgba(197,160,89,0.4)] transition-all duration-500">
+                                <img src={Logo} alt="RK Royal Interiors" className="h-20 md:h-16 w-auto transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+                            </div>
                             <div className="flex flex-col">
                                 <span className="font-bold text-xl md:text-2xl text-[#FAF9F6] tracking-widest uppercase">
                                     RK Royal <span className="text-[#C5A059]">Interiors</span>
