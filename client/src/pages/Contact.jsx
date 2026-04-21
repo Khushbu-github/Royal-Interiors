@@ -89,8 +89,8 @@ const Contact = () => {
                                 <a href="tel:+917090222227" className="flex items-center gap-2 text-stone/70 hover:text-[#C5A059] transition-colors text-sm font-medium">
                                     <MessageCircle size={13} className="text-[#C5A059]" /> +91 70902 22227 <span className="text-xs text-[#C5A059]/60">(WhatsApp)</span>
                                 </a>
-                                <a href="tel:+919845100617" className="flex items-center gap-2 text-stone/50 hover:text-[#C5A059] transition-colors text-sm">
-                                    <Phone size={13} className="text-stone/30" /> +91 98451 00617
+                                <a href="tel:+919036688777" className="flex items-center gap-2 text-stone/50 hover:text-[#C5A059] transition-colors text-sm">
+                                    <Phone size={13} className="text-stone/30" /> +91 90366 88777
                                 </a>
                                 <a href="tel:+918494922229" className="flex items-center gap-2 text-stone/50 hover:text-[#C5A059] transition-colors text-sm">
                                     <Phone size={13} className="text-stone/30" /> +91 84949 22229

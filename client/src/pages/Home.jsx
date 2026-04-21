@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, MapPin, ExternalLink, CheckCircle2, ChevronLeft, ChevronRight, X, Maximize2 } from 'lucide-react';
 import HeroThree from '../components/HeroThree';
 
 
@@ -8,6 +8,38 @@ import Kitchen from '../assets/Kitchen.png';
 import Bedroom from '../assets/Bedroom.png';
 import Livingroom from '../assets/Livingroom.png';
 import Diningroom from '../assets/Diningroom.png';
+
+// Import Gallery Images
+import k1 from '../assets/k1.jpg';
+import k2 from '../assets/k2.jpg';
+import k3 from '../assets/k3.jpg';
+import k4 from '../assets/k4.jpg';
+import k5 from '../assets/k5.jpg';
+
+import b1 from '../assets/b1.jpg';
+import b2 from '../assets/b2.jpg';
+import b3 from '../assets/b3.jpg';
+import b4 from '../assets/b4.jpg';
+import b5 from '../assets/b5.jpg';
+
+import l1 from '../assets/l1.jpg';
+import l2 from '../assets/l2.jpg';
+import l3 from '../assets/l3.jpg';
+import l4 from '../assets/l4.jpg';
+import l5 from '../assets/l5.jpg';
+
+import d1 from '../assets/d1.jpg';
+import d2 from '../assets/d2.jpg';
+import d3 from '../assets/d3.jpg';
+import d4 from '../assets/d4.jpg';
+import d5 from '../assets/d5.jpg';
+
+const roomGalleries = {
+    kitchen: { name: 'Modular Kitchens', images: [k1, k2, k3, k4, k5] },
+    bedroom: { name: 'Royal Bedrooms', images: [b1, b2, b3, b4, b5] },
+    living: { name: 'Living Rooms', images: [l1, l2, l3, l4, l5] },
+    dining: { name: 'Dining Areas', images: [d1, d2, d3, d4, d5] }
+};
 
 // Animated counter hook
 const useCounter = (target, duration = 2000) => {
@@ -79,6 +111,31 @@ const Home = () => {
     const since = useCounter(2015, 2500);
 
     const [hoveredRoom, setHoveredRoom] = useState(null);
+    const [selectedGallery, setSelectedGallery] = useState(null);
+    const [currentImgIdx, setCurrentImgIdx] = useState(0);
+
+    const openGallery = (roomId) => {
+        setSelectedGallery(roomGalleries[roomId]);
+        setCurrentImgIdx(0);
+        // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeGallery = () => {
+        setSelectedGallery(null);
+        document.body.style.overflow = 'unset';
+    };
+
+    const nextImg = (e) => {
+        e?.stopPropagation();
+        setCurrentImgIdx((prev) => (prev + 1) % selectedGallery.images.length);
+    };
+
+    const prevImg = (e) => {
+        e?.stopPropagation();
+        setCurrentImgIdx((prev) => (prev - 1 + selectedGallery.images.length) % selectedGallery.images.length);
+    };
+
     const rooms = [
         { id: 'kitchen', name: 'KITCHEN', image: Kitchen },
         { id: 'bedroom', name: 'BEDROOM', image: Bedroom },
@@ -260,12 +317,17 @@ const Home = () => {
                 <div className="hidden md:block w-full max-w-[1400px] mx-auto">
                     <div className="relative overflow-hidden group cursor-pointer h-[400px] lg:h-[500px] mb-4 rounded-2xl"
                         onMouseEnter={() => setHoveredRoom('kitchen')}
-                        onMouseLeave={() => setHoveredRoom(null)}>
+                        onMouseLeave={() => setHoveredRoom(null)}
+                        onClick={() => openGallery('kitchen')}>
                         <img src={Kitchen} alt="KITCHEN" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                         <div className={`absolute inset-0 transition-all duration-700 ${hoveredRoom === 'kitchen' ? 'bg-[#C5A059]/20 backdrop-blur-[2px]' : 'bg-[#1A1A1A]/40'}`} />
-                        <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="absolute inset-0 flex flex-col items-center justify-center">
                             <h3 className={`text-5xl lg:text-8xl font-black text-[#FAF9F6] tracking-[0.3em] transition-all duration-700 ${hoveredRoom === 'kitchen' ? 'scale-110 opacity-100' : 'scale-100 opacity-90'}`}
                                 style={{ textShadow: '4px 4px 20px rgba(0,0,0,0.6)' }}>KITCHEN</h3>
+                            <div className={`mt-4 flex items-center gap-2 text-[#C5A059] opacity-0 transition-all duration-500 transform translate-y-4 ${hoveredRoom === 'kitchen' ? 'opacity-100 translate-y-0' : ''}`}>
+                                <Maximize2 size={16} />
+                                <span className="text-[10px] font-black uppercase tracking-[0.3em]">View Gallery</span>
+                            </div>
                         </div>
                         {hoveredRoom === 'kitchen' && <div className="absolute inset-6 border border-[#C5A059]/30 rounded-xl pointer-events-none animate-pulse" />}
                     </div>
@@ -278,12 +340,17 @@ const Home = () => {
                         ].map((room) => (
                             <div key={room.id} className="relative overflow-hidden group cursor-pointer h-[350px] lg:h-[450px] rounded-2xl"
                                 onMouseEnter={() => setHoveredRoom(room.id)}
-                                onMouseLeave={() => setHoveredRoom(null)}>
+                                onMouseLeave={() => setHoveredRoom(null)}
+                                onClick={() => openGallery(room.id)}>
                                 <img src={room.img} alt={room.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                                 <div className={`absolute inset-0 transition-all duration-700 ${hoveredRoom === room.id ? 'bg-[#C5A059]/20 backdrop-blur-[2px]' : 'bg-[#1A1A1A]/40'}`} />
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 flex flex-col items-center justify-center">
                                     <h3 className={`text-2xl lg:text-4xl font-black text-[#FAF9F6] tracking-[0.2em] transition-all duration-700 ${hoveredRoom === room.id ? 'scale-110 opacity-100' : 'scale-100 opacity-90'}`}
                                         style={{ textShadow: '2px 2px 15px rgba(0,0,0,0.6)' }}>{room.name}</h3>
+                                    <div className={`mt-2 flex items-center gap-2 text-[#C5A059] opacity-0 transition-all duration-500 transform translate-y-4 ${hoveredRoom === room.id ? 'opacity-100 translate-y-0' : ''}`}>
+                                        <Maximize2 size={12} />
+                                        <span className="text-[8px] font-black uppercase tracking-[0.2em]">View Gallery</span>
+                                    </div>
                                 </div>
                                 {hoveredRoom === room.id && <div className="absolute inset-4 border border-[#C5A059]/30 rounded-xl pointer-events-none animate-pulse" />}
                             </div>
@@ -296,12 +363,16 @@ const Home = () => {
                 <div className="md:hidden flex flex-col w-full max-w-[1400px] mx-auto gap-4">
                     {rooms.map((room) => (
                         <div key={room.id} className="relative overflow-hidden h-[280px] rounded-2xl"
-                            onClick={() => setHoveredRoom(hoveredRoom === room.id ? null : room.id)}>
+                            onClick={() => openGallery(room.id)}>
                             <img src={room.image} alt={room.name} className={`w-full h-full object-cover transition-transform duration-1000 ${hoveredRoom === room.id ? 'scale-110' : 'scale-100'}`} />
                             <div className={`absolute inset-0 transition-all duration-700 ${hoveredRoom === room.id ? 'bg-[#D4AF37]/20' : 'bg-black/40'}`} />
-                            <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="absolute inset-0 flex flex-col items-center justify-center">
                                 <h3 className={`text-4xl font-black text-white tracking-[0.2em] transition-all duration-700 ${hoveredRoom === room.id ? 'scale-110' : 'scale-100'}`}
                                     style={{ textShadow: '2px 2px 12px rgba(0,0,0,0.8)' }}>{room.name}</h3>
+                                <div className="mt-2 flex items-center gap-2 text-[#C5A059]">
+                                    <Maximize2 size={14} />
+                                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">View Gallery</span>
+                                </div>
                             </div>
                             {hoveredRoom === room.id && <div className="absolute inset-4 border border-[#D4AF37]/30 rounded-xl pointer-events-none" />}
                         </div>
@@ -488,6 +559,75 @@ const Home = () => {
                 </div>
 
             </div>
+
+            {/* ===== GALLERY LIGHTBOX ===== */}
+            {selectedGallery && (
+                <div 
+                    className="fixed inset-0 z-[100] bg-[#0b0b0b]/98 backdrop-blur-2xl flex flex-col items-center justify-center animate-in fade-in duration-500"
+                    onClick={closeGallery}
+                >
+                    {/* Header Info */}
+                    <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-50">
+                        <div className="flex flex-col">
+                            <span className="text-[#C5A059] text-[10px] font-black uppercase tracking-[0.4em] mb-1">Portfolio</span>
+                            <h4 className="text-white font-black text-lg md:text-2xl uppercase tracking-widest">{selectedGallery.name}</h4>
+                        </div>
+                        <button 
+                            onClick={closeGallery}
+                            className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#C5A059] hover:text-[#0b0b0b] transition-all duration-300"
+                        >
+                            <X size={20} />
+                        </button>
+                    </div>
+
+                    {/* Main Content */}
+                    <div className="relative w-full h-full flex items-center justify-center px-4 md:px-20 overflow-hidden">
+                        {/* Navigation Arrows */}
+                        <button 
+                            onClick={prevImg}
+                            className="absolute left-4 md:left-10 z-50 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#C5A059] hover:text-[#0b0b0b] transition-all duration-300 group"
+                        >
+                            <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+                        </button>
+
+                        <button 
+                            onClick={nextImg}
+                            className="absolute right-4 md:right-10 z-50 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#C5A059] hover:text-[#0b0b0b] transition-all duration-300 group"
+                        >
+                            <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+
+                        {/* Image Container */}
+                        <div 
+                            className="relative w-full max-w-6xl h-[60vh] md:h-[75vh] flex items-center justify-center"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <img 
+                                key={currentImgIdx}
+                                src={selectedGallery.images[currentImgIdx]} 
+                                alt={`${selectedGallery.name} View ${currentImgIdx + 1}`}
+                                className="max-w-full max-h-full object-contain rounded-2xl shadow-[0_0_80px_rgba(197,160,89,0.15)] animate-in zoom-in-95 fade-in duration-700"
+                            />
+                        </div>
+
+                        {/* Bottom Indicator */}
+                        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+                            <div className="flex gap-2">
+                                {selectedGallery.images.map((_, idx) => (
+                                    <button 
+                                        key={idx}
+                                        onClick={(e) => { e.stopPropagation(); setCurrentImgIdx(idx); }}
+                                        className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all duration-500 ${idx === currentImgIdx ? 'w-8 md:w-12 bg-[#C5A059]' : 'bg-white/20 hover:bg-white/40'}`}
+                                    />
+                                ))}
+                            </div>
+                            <span className="text-white/40 text-[9px] font-black uppercase tracking-[0.5em]">
+                                {String(currentImgIdx + 1).padStart(2, '0')} / {String(selectedGallery.images.length).padStart(2, '0')}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

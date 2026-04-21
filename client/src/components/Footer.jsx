@@ -10,14 +10,16 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                     {/* Brand Section */}
                     <div className="space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
-                        <div className="flex flex-col items-center md:items-start gap-8">
-                            <Link to="/" className="group/logo relative">
-                                <div className="bg-[#C5A059] px-20 py-4 md:px-40 md:py-8 rounded-b-3xl shadow-[0_15px_40px_rgba(197,160,89,0.3)] transform transition-all duration-500 group-hover/logo:-translate-y-2">
-                                    <img src={Logo} alt="RK Royal Interiors" className="h-28 md:h-48 w-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-500 group-hover/logo:scale-105" />
-                                </div>
+                        <div className="flex flex-col items-center md:items-start gap-4">
+                            <Link to="/" className="group/logo relative outline-none">
+                                <img 
+                                    src={Logo} 
+                                    alt="RK Royal Interiors" 
+                                    className="h-16 md:h-24 w-auto drop-shadow-[0_0_20px_rgba(197,160,89,0.2)] transition-all duration-500 group-hover/logo:scale-105 group-hover/logo:drop-shadow-[0_0_25px_rgba(197,160,89,0.4)]" 
+                                />
                             </Link>
-                            <div className="flex flex-col items-center md:items-start">
-                                <span className="font-bold text-2xl md:text-3xl text-[#FAF9F6] tracking-[0.2em] uppercase leading-tight">
+                            <div className="flex flex-col items-center md:items-start pt-2">
+                                <span className="font-bold text-xl md:text-2xl text-[#FAF9F6] tracking-[0.2em] uppercase leading-tight">
                                     RK Royal <span className="text-[#C5A059]">Interiors</span>
                                 </span>
                                 <span className="text-[10px] tracking-[0.6em] uppercase text-[#FAF9F6]/40 font-black mt-2">Crafting Royalty</span>
@@ -64,7 +66,7 @@ const Footer = () => {
                                     <a href="tel:+917090222227" className="hover:text-[#C5A059] transition-colors opacity-70 hover:opacity-100">+91 70902 22227</a>
                                 </div>
                                 <div className="pl-0 md:pl-8 text-[10px] md:text-xs text-[#FAF9F6]/30 space-y-1 text-center md:text-left">
-                                    <p>+91 98451 00617</p>
+                                    <p>+91 90366 88777</p>
                                     <p>+91 84949 22229</p>
                                 </div>
                             </li>
