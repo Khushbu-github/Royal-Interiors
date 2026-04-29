@@ -30,14 +30,14 @@ const Navbar = () => {
                     <div className="flex justify-between items-center h-20 md:h-24 transition-all duration-500">
 
 
-                        <div className="flex items-center md:-ml-4 lg:-ml-6 md:mr-8">
-                            <Link to="/" className="flex-shrink-0 flex items-center group/logo relative bg-gradient-to-br from-[#D4AF37] to-[#B8860B] px-4 py-4 md:px-8 md:py-8 rounded-b-3xl shadow-[0_15px_40px_rgba(212,175,55,0.3)] transition-all duration-500 hover:-translate-y-1">
+                        <div className="flex items-center md:mr-8 lg:mr-12">
+                            <Link to="/" className={`flex-shrink-0 flex items-center group/logo relative bg-gradient-to-br from-[#D4AF37] to-[#B8860B] transition-all duration-500 hover:-translate-y-1 shadow-[0_15px_40px_rgba(212,175,55,0.3)] ${scrolled ? 'px-4 py-3 md:px-6 md:py-5 rounded-b-2xl md:-ml-2' : 'px-4 py-4 md:px-8 md:py-8 rounded-b-3xl md:-ml-4 lg:-ml-6'}`}>
                                <img 
                                   src={Logo} 
                                   alt="RK Royal Interiors" 
-                                  className="transition-all duration-500 h-24 md:h-32 w-auto group-hover/logo:scale-110 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]" 
+                                  className={`transition-all duration-500 w-auto group-hover/logo:scale-110 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] ${scrolled ? 'h-16 md:h-20' : 'h-24 md:h-28'}`} 
                                 />
-                                <div className="absolute inset-0 border-b-2 border-x-2 border-white/10 rounded-b-3xl pointer-events-none" />
+                                <div className={`absolute inset-0 border-b-2 border-x-2 border-white/10 pointer-events-none ${scrolled ? 'rounded-b-2xl' : 'rounded-b-3xl'}`} />
                             </Link>
                         </div>
 
