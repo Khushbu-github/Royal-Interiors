@@ -30,13 +30,14 @@ const Navbar = () => {
                     <div className="flex justify-between items-center h-20 md:h-24 transition-all duration-500">
 
 
-                        <div className="flex items-center -ml-2 md:ml-0">
-                            <Link to="/" className="flex-shrink-0 flex items-center group/logo relative py-2 outline-none">
+                        <div className="flex items-center md:ml-0">
+                            <Link to="/" className="flex-shrink-0 flex items-center group/logo relative bg-gradient-to-br from-[#D4AF37] to-[#B8860B] px-6 py-5 md:px-14 md:py-10 rounded-b-3xl shadow-[0_15px_40px_rgba(212,175,55,0.3)] transition-all duration-500 hover:-translate-y-2">
                                <img 
                                   src={Logo} 
                                   alt="RK Royal Interiors" 
-                                  className="transition-all duration-500 h-12 md:h-20 w-auto group-hover/logo:scale-110 drop-shadow-[0_0_15px_rgba(197,160,89,0.3)]" 
+                                  className="transition-all duration-500 h-28 md:h-40 w-auto group-hover/logo:scale-110 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]" 
                                 />
+                                <div className="absolute inset-0 border-b-2 border-x-2 border-white/10 rounded-b-3xl pointer-events-none" />
                             </Link>
                         </div>
 
