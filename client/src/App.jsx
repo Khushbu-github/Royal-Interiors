@@ -41,35 +41,33 @@ function App() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 bg-[#1A1A1A] flex flex-col items-center justify-center z-50">
+      <div className="fixed inset-0 bg-[#F4F3F1] flex flex-col items-center justify-center z-50">
         {/* Logo Shield */}
         <div className="relative mb-10" data-aos="zoom-in">
-          <div className="absolute -inset-16 bg-[#C5A059]/5 rounded-full blur-3xl animate-pulse" />
-          <div className="relative bg-[#C5A059] p-10 md:p-12 rounded-full shadow-[0_0_60px_rgba(197,160,89,0.4)] animate-bounce-slow">
+          <div className="absolute -inset-16 bg-[#9F7730]/5 rounded-full blur-3xl animate-pulse" />
+          <div className="relative flex items-center justify-center">
             <img
               src={Logo}
               alt="RK Royal Interiors"
-              className="h-24 md:h-32 w-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
+              className="h-32 md:h-40 w-auto transition-transform duration-1000 animate-pulse"
             />
-            {/* Elegant border ring */}
-            <div className="absolute inset-2 border border-black/10 rounded-full" />
           </div>
         </div>
         {/* Brand name */}
         <div className="text-center mb-10">
-          <p className="text-[#FAF9F6] font-black text-2xl tracking-[0.6em] uppercase mb-2">
-            RK Royal <span className="text-[#C5A059]">Interiors</span>
+          <p className="text-[#061D37] font-black text-2xl tracking-[0.6em] uppercase mb-2">
+            RK Royal <span className="text-[#9F7730]">Interiors</span>
           </p>
           <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-8 bg-[#C5A059]/30" />
-            <p className="text-stone/40 text-[10px] tracking-[0.4em] uppercase font-bold">Crafting Royalty</p>
-            <div className="h-px w-8 bg-[#C5A059]/30" />
+            <div className="h-px w-8 bg-[#9F7730]/30" />
+            <p className="text-[#061D37]/40 text-[10px] tracking-[0.4em] uppercase font-bold">Crafting Royalty</p>
+            <div className="h-px w-8 bg-[#9F7730]/30" />
           </div>
         </div>
         {/* Progress bar */}
         <div className="w-64 h-0.5 bg-white/5 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-transparent via-[#C5A059] to-transparent shadow-[0_0_15px_rgba(197,160,89,0.5)]"
+            className="h-full bg-gradient-to-r from-transparent via-[#9F7730] to-transparent shadow-[0_0_15px_rgba(159,119,48,0.5)]"
             style={{
               animation: 'loadBar 2.5s ease-in-out forwards',
             }}
@@ -89,7 +87,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#1A1A1A] text-stone/50">
+      <div className="min-h-screen bg-[#F4F3F1] text-[#061D37]">
         <Navbar />
 
         <main>

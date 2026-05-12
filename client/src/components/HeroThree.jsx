@@ -54,8 +54,8 @@ const MaterialShowcase = ({ mouse }) => {
                     depthScale={1.2}
                     minDepthThreshold={0.4}
                     maxDepthThreshold={1.4}
-                    color="#050505"
-                    metalness={0.5}
+                    color="#F4F3F1"
+                    metalness={0.2}
                     map={floorMap}
                 />
             </mesh>
@@ -66,7 +66,7 @@ const MaterialShowcase = ({ mouse }) => {
             <group position={[isMobile ? -1.5 : -2.5, -1, isMobile ? -6 : -5]}>
                 <mesh position={[0, -0.5, 0]} castShadow receiveShadow>
                     <boxGeometry args={[isMobile ? 1 : 1.5, 1, isMobile ? 1 : 1.5]} />
-                    <meshStandardMaterial color="#1a1a1a" roughness={0.3} metalness={0.8} />
+                    <meshStandardMaterial color="#E5E5E5" roughness={0.3} metalness={0.8} />
                 </mesh>
                 <Float speed={2} rotationIntensity={1} floatIntensity={1}>
                     <mesh position={[0, 1.2, 0]} castShadow>
@@ -74,14 +74,14 @@ const MaterialShowcase = ({ mouse }) => {
                         <meshStandardMaterial map={marbleMap} roughness={0.1} metalness={0.2} />
                     </mesh>
                 </Float>
-                <pointLight position={[0, 2, 0]} intensity={4} color="#C5A059" />
+                <pointLight position={[0, 2, 0]} intensity={4} color="#9F7730" />
             </group>
 
             {/* 2. Wood Sample */}
             <group position={[0, -1, isMobile ? -9 : -8]}>
                 <mesh position={[0, -0.5, 0]} castShadow receiveShadow>
                     <boxGeometry args={[isMobile ? 1.5 : 2, 1, isMobile ? 1.5 : 2]} />
-                    <meshStandardMaterial color="#0b0b0b" roughness={0.5} />
+                    <meshStandardMaterial color="#D1D1D1" roughness={0.5} />
                 </mesh>
                 <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
                     <mesh position={[0, 1.5, 0]} castShadow rotation={[0, Math.PI / 4, 0]}>
@@ -89,28 +89,28 @@ const MaterialShowcase = ({ mouse }) => {
                         <meshStandardMaterial map={woodMap} roughness={0.4} />
                     </mesh>
                 </Float>
-                <pointLight position={[0, 2.5, 0]} intensity={2} color="#FAF9F6" />
+                <pointLight position={[0, 2.5, 0]} intensity={2} color="#F4F3F1" />
             </group>
 
             {/* 3. Brass Sample */}
             <group position={[isMobile ? 1.5 : 2.5, -1, isMobile ? -6 : -5]}>
                 <mesh position={[0, -0.5, 0]} castShadow receiveShadow>
                     <boxGeometry args={[isMobile ? 1 : 1.5, 1, isMobile ? 1 : 1.5]} />
-                    <meshStandardMaterial color="#1a1a1a" roughness={0.3} metalness={0.8} />
+                    <meshStandardMaterial color="#E5E5E5" roughness={0.3} metalness={0.8} />
                 </mesh>
                 <Float speed={3} rotationIntensity={3} floatIntensity={2}>
                     <mesh position={[0, 1.2, 0]} castShadow>
                         <torusGeometry args={[isMobile ? 0.3 : 0.4, 0.15, 64, 128]} />
-                        <meshStandardMaterial color="#C5A059" metalness={1} roughness={0.05} />
+                        <meshStandardMaterial color="#9F7730" metalness={1} roughness={0.05} />
                     </mesh>
                 </Float>
-                <pointLight position={[0, 2, 0]} intensity={4} color="#D4AF37" />
+                <pointLight position={[0, 2, 0]} intensity={4} color="#9F7730" />
             </group>
 
             {/* Backdrop / Wall */}
             <mesh position={[0, 5, -15]}>
                 <planeGeometry args={[100, 20]} />
-                <meshStandardMaterial color="#050505" roughness={1} />
+                <meshStandardMaterial color="#F4F3F1" roughness={1} />
             </mesh>
 
             {/* Particle Dust for atmosphere */}
@@ -144,13 +144,13 @@ const Stars = () => {
     return (
         <group rotation={[0, 0, Math.PI / 4]}>
             <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
-                <PointMaterial transparent color="#C5A059" size={0.008} sizeAttenuation={true} depthWrite={false} opacity={0.6} blending={THREE.AdditiveBlending} />
+                <PointMaterial transparent color="#9F7730" size={0.008} sizeAttenuation={true} depthWrite={false} opacity={0.6} blending={THREE.AdditiveBlending} />
             </Points>
         </group>
     );
 };
 
-const HeroThree = () => {
+const HeroThree = ({ isDark = true }) => {
     const mouse = useRef([0, 0]);
     const [contextLost, setContextLost] = useState(false);
 
@@ -165,9 +165,11 @@ const HeroThree = () => {
         });
     }, []);
 
+    const themeColor = isDark ? '#061D37' : '#F4F3F1';
+
     return (
         <div 
-            className="absolute inset-0 z-0 bg-black"
+            className={`absolute inset-0 z-0 ${isDark ? 'bg-[#061D37]' : 'bg-[#F4F3F1]'}`}
             onMouseMove={(e) => {
                 mouse.current = [
                     (e.clientX / window.innerWidth) * 2 - 1,
@@ -176,29 +178,29 @@ const HeroThree = () => {
             }}
         >
             {contextLost ? (
-                <div className="absolute inset-0 bg-[#050505] flex items-center justify-center">
+                <div className={`absolute inset-0 flex items-center justify-center ${isDark ? 'bg-[#061D37]' : 'bg-[#F4F3F1]'}`}>
                     <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-4 border-2 border-[#C5A059] rounded-full flex items-center justify-center">
-                            <span className="text-[#C5A059] text-2xl">✦</span>
+                        <div className="w-16 h-16 mx-auto mb-4 border-2 border-[#9F7730] rounded-full flex items-center justify-center">
+                            <span className="text-[#9F7730] text-2xl">✦</span>
                         </div>
                     </div>
                 </div>
             ) : (
                 <Canvas shadows={{ type: THREE.PCFShadowMap }} dpr={[1, 1.5]} onCreated={handleCreated}>
                     <PerspectiveCamera makeDefault position={[0, 1, 10]} fov={35} />
-                    <color attach="background" args={['#050505']} />
+                    <color attach="background" args={[themeColor]} />
                     
-                    <fog attach="fog" args={['#050505', 10, 25]} />
+                    <fog attach="fog" args={[themeColor, 10, 25]} />
                     
-                    <ambientLight intensity={0.5} />
-                    <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} castShadow />
+                    <ambientLight intensity={isDark ? 0.5 : 0.8} />
+                    <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={isDark ? 2 : 1.5} castShadow />
                     
                     <React.Suspense fallback={null}>
                         <MaterialShowcase mouse={mouse} />
                         <Environment preset="city" />
                     </React.Suspense>
                     
-                    <ContactShadows position={[0, -1.99, 0]} opacity={0.4} scale={20} blur={2.5} far={4.5} />
+                    <ContactShadows position={[0, -1.99, 0]} opacity={isDark ? 0.4 : 0.2} scale={20} blur={2.5} far={4.5} />
                 </Canvas>
             )}
         </div>
