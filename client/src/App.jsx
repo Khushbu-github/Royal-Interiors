@@ -49,7 +49,7 @@ function App() {
             <img
               src={Logo}
               alt="RK Royal Interiors"
-              className="h-32 md:h-40 w-auto transition-transform duration-1000 animate-pulse"
+              className="h-44 md:h-56 w-auto transition-transform duration-1000 animate-pulse"
             />
           </div>
         </div>

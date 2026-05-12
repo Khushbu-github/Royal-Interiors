@@ -31,11 +31,11 @@ const Navbar = () => {
 
 
                         <div className="flex items-center md:mr-8 lg:mr-12">
-                            <Link to="/" className={`flex-shrink-0 flex items-center group/logo transition-all duration-500 hover:-translate-y-1 ${scrolled ? 'h-16 md:h-20' : 'h-24 md:h-28'}`}>
+                            <Link to="/" className={`flex-shrink-0 flex items-center group/logo transition-all duration-500 hover:-translate-y-1 ${scrolled ? 'h-20 md:h-24' : 'h-28 md:h-32'}`}>
                                <img 
                                   src={Logo} 
                                   alt="RK Royal Interiors" 
-                                  className={`transition-all duration-500 w-auto group-hover/logo:scale-105 ${scrolled ? 'h-16 md:h-20' : 'h-24 md:h-28'}`} 
+                                  className={`transition-all duration-500 w-auto group-hover/logo:scale-105 ${scrolled ? 'h-20 md:h-24' : 'h-28 md:h-32'}`} 
                                 />
                             </Link>
                         </div>

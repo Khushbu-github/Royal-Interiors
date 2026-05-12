@@ -15,7 +15,7 @@ const Footer = () => {
                                 <img 
                                     src={Logo} 
                                     alt="RK Royal Interiors" 
-                                    className="h-32 md:h-40 w-auto transition-all duration-500 group-hover/logo:scale-105" 
+                                    className="h-44 md:h-60 w-auto transition-all duration-500 group-hover/logo:scale-105" 
                                 />
                             </Link>
                         </div>

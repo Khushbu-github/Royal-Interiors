@@ -36,7 +36,7 @@ const About = () => {
                     <div className="flex flex-col md:flex-row items-end gap-12">
                         {/* Logo side */}
                         <div className="flex-shrink-0 mx-auto md:mx-0" data-aos="fade-right">
-                            <img src={Logo} alt="RK Royal Interiors" className="relative h-48 md:h-64 lg:h-80 w-auto" />
+                            <img src={Logo} alt="RK Royal Interiors" className="relative h-64 md:h-80 lg:h-[32rem] w-auto" />
                         </div>
 
                         {/* Text side */}
